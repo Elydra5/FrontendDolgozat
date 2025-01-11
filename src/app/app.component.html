@@ -7,11 +7,12 @@
     <h1>{{translate('TITLE')}}</h1>
   </div>
 
-  <form (ngSubmit)="addProduct()" class="mb-4">
+  <form (ngSubmit)="addProduct()" class="mb-4" name="prodForm">
     <div class="row g-3">
       <div class="col-md-3">
         <input
           type="text"
+          id="productName"
           class="form-control"
           [(ngModel)]="newProduct.name"
           name="productName"
@@ -22,6 +23,7 @@
       <div class="col-md-3">
         <input
           type="text"
+          id="productCategory"
           class="form-control"
           [(ngModel)]="newProduct.category"
           name="productCategory"
@@ -32,6 +34,7 @@
       <div class="col-md-3">
         <input
           type="text"
+          id="productDescription"
           class="form-control"
           [(ngModel)]="newProduct.description"
           name="productDescription"
@@ -41,6 +44,7 @@
       <div class="col-md-2">
         <input
           type="number"
+          id="productPrice"
           class="form-control"
           [(ngModel)]="newProduct.price"
           name="productPrice"
@@ -69,33 +73,19 @@
       <tr *ngFor="let product of products">
         <td>
           <input
-            class="form-control"
-            [(ngModel)]="product.name"
-            [ngModelOptions]="{standalone: true}"
-          />
+            class="form-control" [(ngModel)]="product.name" name="productName" [ngModelOptions]="{standalone: true}"/>
         </td>
         <td>
           <input
-            class="form-control"
-            [(ngModel)]="product.category"
-            [ngModelOptions]="{standalone: true}"
-          />
+            class="form-control" [(ngModel)]="product.category" name="productCategory" [ngModelOptions]="{standalone: true}"/>
         </td>
         <td>
           <input
-            class="form-control"
-            [(ngModel)]="product.description"
-            [ngModelOptions]="{standalone: true}"
-          />
+            class="form-control" [(ngModel)]="product.description" name="productDescription" [ngModelOptions]="{standalone: true}"/>
         </td>
         <td>
           <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="product.price"
-            [ngModelOptions]="{standalone: true}"
-            step="0.01"
-          />
+            type="number" class="form-control" [(ngModel)]="product.price" name="productPrice" [ngModelOptions]="{standalone: true}" step="0.01"/>
         </td>
         <td>
           <button class="btn btn-primary me-2" (click)="updateProduct(product)">
