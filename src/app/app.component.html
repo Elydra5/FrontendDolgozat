@@ -73,19 +73,19 @@
       <tr *ngFor="let product of products">
         <td>
           <input
-            class="form-control" [(ngModel)]="product.name" name="productName" [ngModelOptions]="{standalone: true}"/>
+            class="form-control" [(ngModel)]="product.name" name="productName"/>
         </td>
         <td>
           <input
-            class="form-control" [(ngModel)]="product.category" name="productCategory" [ngModelOptions]="{standalone: true}"/>
+            class="form-control" [(ngModel)]="product.category" name="productCategory"/>
         </td>
         <td>
           <input
-            class="form-control" [(ngModel)]="product.description" name="productDescription" [ngModelOptions]="{standalone: true}"/>
+            class="form-control" [(ngModel)]="product.description" name="productDescription"/>
         </td>
         <td>
           <input
-            type="number" class="form-control" [(ngModel)]="product.price" name="productPrice" [ngModelOptions]="{standalone: true}" step="0.01"/>
+            type="number" class="form-control" [(ngModel)]="product.price" name="productPrice" step="0.01"/>
         </td>
         <td>
           <button class="btn btn-primary me-2" (click)="updateProduct(product)">
